@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GamePanel from './pages/GamePanel';
+import styled from 'styled-components';
 
 function App() {
+  const [size,setSize]=useState(8);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <ButtonGroup>
+          <Button onClick={()=>{setSize(8)}}>8</Button>
+          <Button onClick={()=>{setSize(10)}}>10</Button>  
+          {/* <Button onClick={()=>{setSize(12)}}>12</Button>         
+          <Button onClick={()=>{setSize(16)}}>16</Button> */}
+        </ButtonGroup>
+        <GamePanel size={size} key={Date.now()}/>
+        {/* <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
@@ -17,10 +27,21 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
 }
 
 export default App;
+const ButtonGroup=styled.div`
+  display:flex;
+  flex-direction:row;
+  gap:10px;
+`
+const Button=styled.button`
+  font-size:large;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor: pointer;
+`
