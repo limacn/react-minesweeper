@@ -5,9 +5,13 @@
 
 .App-logo {
   height: 20vmin;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
-
+.App-logo-clicked{
+  height: 20vmin;
+  /* pointer-events: none; */
+  animation: App-logo-spin infinite 20s linear;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -6,10 +6,12 @@ import styled from 'styled-components';
 
 function App() {
   const [size,setSize]=useState(8);
+  const [logoClicked,setLogoClicked]=useState(false);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className={logoClicked?"App-logo-clicked":"App-logo"} alt="logo" 
+        onClick={()=>setLogoClicked(!logoClicked)} />
         <ButtonGroup>
           <Button onClick={()=>{setSize(8)}}>8</Button>
           <Button onClick={()=>{setSize(10)}}>10</Button>  

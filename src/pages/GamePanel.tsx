@@ -23,7 +23,7 @@ export default function GamePanel(props: MyProps) {
     }
     function onMineClicked(index: number) {
         if (isWin) return;
-        console.log(array[index]);
+        // console.log(array[index]);
         let tempArray = array.slice();
         tempArray[index].clicked = true;
         tempArray[index].value = steps % 2 === 0 ? "O" : "X";
@@ -46,7 +46,7 @@ export default function GamePanel(props: MyProps) {
                 break;
             }
             if (array[currentIndex].value !== array[index].value) {
-                console.log(currentIndex,array[currentIndex].value,array[index].value)
+                // console.log(currentIndex,array[currentIndex].value,array[index].value)
                 break;
             }
             ++counter;
@@ -61,14 +61,14 @@ export default function GamePanel(props: MyProps) {
             if (currentIndex < 0 || currentIndex >= array.length){
                 break;
             }
-            if (array[currentIndex].value != array[index].value){
+            if (array[currentIndex].value !== array[index].value){
 
-                console.log(currentIndex,array[currentIndex].value,array[index].value)
+                // console.log(currentIndex,array[currentIndex].value,array[index].value)
                 break;
             }
             ++counter;
         }
-        console.log(counter,xOffset,yOffset);
+        // console.log(counter,xOffset,yOffset);
         //因为上面2个循环中i=0时++counter都执行了，最终结果需要减掉一次重复机算
         return (counter-1) >= 5;
     }
